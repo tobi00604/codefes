@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		long[] a = new long[n];
@@ -18,36 +18,36 @@ public class Main {
 			b[i] = Long.parseLong(sc.next());
 		}
 
-		// –µ‚ƒP[ƒX
+		// çŸ›ç›¾ã‚±ãƒ¼ã‚¹
 		if (a[n - 1] != b[0]) {
 			System.out.println(0);
 			return;
 		}
 
-		// ¶‚©‚ç•à‚­
-		// c[i] = h ¨ i”Ô–Ú‚ÌR‚Ì‚ ‚è‚¦‚é‚‚³‚Í h ’Ê‚è
-		// c[i] = 0 ¨ i”Ô–Ú‚ÌR‚Ì‚ ‚è‚¦‚é‚‚³‚Í 1 ’Ê‚è
+		// å·¦ã‹ã‚‰æ­©ã
+		// c[i] = h â†’ iç•ªç›®ã®å±±ã®ã‚ã‚Šãˆã‚‹é«˜ã•ã¯ h é€šã‚Š
+		// c[i] = 0 â†’ iç•ªç›®ã®å±±ã®ã‚ã‚Šãˆã‚‹é«˜ã•ã¯ 1 é€šã‚Š
 		long[] c = new long[n];
 		c[0] = 0;
 		for (int i = 1; i < n; i++) {
 			c[i] = (a[i - 1] == a[i]) ? a[i] : 0;
 		}
 
-		// ‰E‚©‚ç•à‚­
-		// d[i] = h ¨ i”Ô–Ú‚ÌR‚Ì‚ ‚è‚¦‚é‚‚³‚Í h ’Ê‚è
-		// d[i] = 0 ¨ i”Ô–Ú‚ÌR‚Ì‚ ‚è‚¦‚é‚‚³‚Í 1 ’Ê‚è
+		// å³ã‹ã‚‰æ­©ã
+		// d[i] = h â†’ iç•ªç›®ã®å±±ã®ã‚ã‚Šãˆã‚‹é«˜ã•ã¯ h é€šã‚Š
+		// d[i] = 0 â†’ iç•ªç›®ã®å±±ã®ã‚ã‚Šãˆã‚‹é«˜ã•ã¯ 1 é€šã‚Š
 		long[] d = new long[n];
 		d[n - 1] = 0;
 		for (int i = n - 2; 0 <= i; i--) {
 			d[i] = (b[i] == b[i + 1]) ? b[i] : 0;
 		}
 
-		// Šm”F—p
+		// ç¢ºèªç”¨
 //		System.out.println(Arrays.toString(c));
 //		System.out.println(Arrays.toString(d));
 
-		// „—
-		// e[i] = h ¨ i”Ô–Ú‚ÌR‚Ì‚ ‚è‚¦‚é‚‚³‚Í h ’Ê‚è
+		// æ¨ç†
+		// e[i] = h â†’ iç•ªç›®ã®å±±ã®ã‚ã‚Šãˆã‚‹é«˜ã•ã¯ h é€šã‚Š
 		long[] e = new long[n];
 		for (int i = 0; i < n; i++) {
 			if (c[i] == 0 || d[i] == 0) {
@@ -69,10 +69,10 @@ public class Main {
 			}
 		}
 
-		// Šm”F—p
+		// ç¢ºèªç”¨
 //		System.out.println(Arrays.toString(e));
 
-		// ‚±‚½‚¦
+		// ã“ãŸãˆ
 		long result = 1;
 		long mod = 1000000000 + 7;
 		for (int i = 0; i < n; i++) {

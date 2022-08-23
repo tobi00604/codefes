@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		int m = Integer.parseInt(sc.next());
@@ -22,7 +22,7 @@ public class Main {
 			}
 		}
 
-		// ‚±‚½‚¦
+		// ã“ãŸãˆ
 		int sum = 0;
 		for (int i = 0; i < n; i++) {
 			sum += mikan[i];

@@ -6,24 +6,24 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		String inputStr = sc.next();
 		String inputStrWithoutX = inputStr.replace("x", "");
 
-		// “š‚¦‚ª0‚É‚È‚é‚©”»’è
+		// ç­”ãˆãŒ0ã«ãªã‚‹ã‹åˆ¤å®š
 		if (checkPalindrome(inputStr)) {
 			System.out.println(0);
 			return;
 		}
 
-		// “š‚¦‚ª-1‚É‚È‚é‚©”»’è
+		// ç­”ãˆãŒ-1ã«ãªã‚‹ã‹åˆ¤å®š
 		if (!checkPalindrome(inputStrWithoutX)) {
 			System.out.println(-1);
 			return;
 		}
 
-		// ŠeŒ„ŠÔ‚Éx‚ª‚¢‚­‚Â‚ ‚é‚©
+		// å„éš™é–“ã«xãŒã„ãã¤ã‚ã‚‹ã‹
 		int[] a = new int[inputStrWithoutX.length() + 1];
 		int j = 0;
 		for (int i = 0; i < inputStr.length(); i++) {
@@ -34,7 +34,7 @@ public class Main {
 			}
 		}
 
-		// “š‚¦‚ğ‹‚ß‚é
+		// ç­”ãˆã‚’æ±‚ã‚ã‚‹
 		int result = 0;
 		for (int i = 0; i < a.length / 2; i++) {
 			result += Math.abs(a[i] - a[a.length - 1 - i]);
@@ -45,7 +45,7 @@ public class Main {
 
 	}
 
-	// ‰ñ•¶‚©‚Ç‚¤‚©”»’è
+	// å›æ–‡ã‹ã©ã†ã‹åˆ¤å®š
 	static boolean checkPalindrome(String str) {
 
 		for (int i = 0; i < str.length() / 2; i++) {

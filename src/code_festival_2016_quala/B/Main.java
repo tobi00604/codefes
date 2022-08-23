@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		int[] a = new int[n + 1];
@@ -14,7 +14,7 @@ public class Main {
 			a[i] = Integer.parseInt(sc.next());
 		}
 
-		// Še‚¤‚³‚¬‚É‚Â‚¢‚Ä
+		// å„ã†ã•ãã«ã¤ã„ã¦
 		int result = 0;
 		for (int i = 1; i <= n; i++) {
 			if (i < a[i] && a[a[i]] == i) {

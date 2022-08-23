@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int w = Integer.parseInt(sc.next());
 		int h = Integer.parseInt(sc.next());
@@ -19,7 +19,7 @@ public class Main {
 			q[i] = Long.parseLong(sc.next());
 		}
 
-		// c•ûŒü‚Æ‰¡•ûŒü‚Ì‘S“¹˜Hî•ñ‚ğ‚Ü‚Æ‚ß‚½”z—ñ‚ğì‚Á‚ÄƒRƒXƒg¸‡ƒ\[ƒg
+		// ç¸¦æ–¹å‘ã¨æ¨ªæ–¹å‘ã®å…¨é“è·¯æƒ…å ±ã‚’ã¾ã¨ã‚ãŸé…åˆ—ã‚’ä½œã£ã¦ã‚³ã‚¹ãƒˆæ˜‡é †ã‚½ãƒ¼ãƒˆ
 		Item[] items = new Item[w + h];
 		for (int i = 0; i < w; i++) {
 			items[i] = new Item(1, p[i]);
@@ -34,24 +34,24 @@ public class Main {
 		};
 		Arrays.sort(items, c);
 
-		// ƒNƒ‰ƒXƒJƒ‹–@
+		// ã‚¯ãƒ©ã‚¹ã‚«ãƒ«æ³•
 		int pDone = 0;
 		int qDone = 0;
 		long totalCost = 0;
 		for (int i = 0; i < w + h; i++) {
 
-			// Šm”F—p
+			// ç¢ºèªç”¨
 			String str = items[i].wh + " : " + items[i].val;
-			str += " i" + pDone + ", " + qDone + "j COST=" + totalCost;
+			str += " ï¼ˆ" + pDone + ", " + qDone + "ï¼‰ COST=" + totalCost;
 //			System.out.println(str);
 
-			// ƒRƒXƒg‰ÁZ
+			// ã‚³ã‚¹ãƒˆåŠ ç®—
 			if (items[i].wh == 1) {
 				totalCost += items[i].val * (h + 1 - qDone);
-				pDone++; // Ÿ‰ñˆÈ~A‰¡•ûŒü“¹˜H‚Í‚Ü‚½‚Ğ‚Æ‚Â•s—v
+				pDone++; // æ¬¡å›ä»¥é™ã€æ¨ªæ–¹å‘é“è·¯ã¯ã¾ãŸã²ã¨ã¤ä¸è¦
 			} else {
 				totalCost += items[i].val * (w + 1 - pDone);
-				qDone++; // Ÿ‰ñˆÈ~Ac•ûŒü“¹˜H‚Í‚Ü‚½‚Ğ‚Æ‚Â•s—v
+				qDone++; // æ¬¡å›ä»¥é™ã€ç¸¦æ–¹å‘é“è·¯ã¯ã¾ãŸã²ã¨ã¤ä¸è¦
 			}
 
 		}
@@ -65,7 +65,7 @@ public class Main {
 		int wh;
 		long val;
 
-		// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		public Item(int wh, long val) {
 			this.wh = wh;
 			this.val = val;

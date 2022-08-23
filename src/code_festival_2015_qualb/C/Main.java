@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		int m = Integer.parseInt(sc.next());
@@ -21,7 +21,7 @@ public class Main {
 		Arrays.sort(a);
 		Arrays.sort(b);
 
-		// Šm”F—p
+		// ç¢ºèªç”¨
 //		System.out.println(Arrays.toString(a));
 //		System.out.println(Arrays.toString(b));
 
@@ -31,7 +31,7 @@ public class Main {
 				c++;
 			}
 
-			// Šm”F—p
+			// ç¢ºèªç”¨
 //			System.out.println(c + " " + i);
 
 			if (c == n) {

@@ -3,12 +3,12 @@ package code_festival_2017_quala.C;
 import java.util.*;
 
 // C - Palindromic Matrix
-// ƒeƒXƒgƒP[ƒXŒ©‚½‚çƒ~ƒX‚É‹C•t‚¢‚½‚©‚à
+// ãƒ†ã‚¹ãƒˆã‚±ãƒ¼ã‚¹è¦‹ãŸã‚‰ãƒŸã‚¹ã«æ°—ä»˜ã„ãŸã‹ã‚‚
 public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int h = Integer.parseInt(sc.next());
 		int w = Integer.parseInt(sc.next());
@@ -20,13 +20,13 @@ public class Main {
 			}
 		}
 
-		// 4‚ÅŠ„‚Á‚½‚ ‚Ü‚è‚ÅƒOƒ‹[ƒv•ª‚¯
+		// 4ã§å‰²ã£ãŸã‚ã¾ã‚Šã§ã‚°ãƒ«ãƒ¼ãƒ—åˆ†ã‘
 		int[] g = new int[4];
 		for (int i = 'a'; i <= 'z'; i++) {
 			g[count[i] % 4]++;
 		}
 
-		// 2m*2nƒTƒCƒY‚Ìê‡
+		// 2m*2nã‚µã‚¤ã‚ºã®å ´åˆ
 		if (h % 2 == 0 && w % 2 == 0) {
 			if (g[0] == 26) {
 				System.out.println("Yes");
@@ -36,7 +36,7 @@ public class Main {
 			return;
 		}
 
-		// (2m+1)*(2n)ƒTƒCƒY‚Ìê‡i4l‘g‚ªnmŒÂ‚Æ2l‘g‚ªnŒÂj
+		// (2m+1)*(2n)ã‚µã‚¤ã‚ºã®å ´åˆï¼ˆ4äººçµ„ãŒnmå€‹ã¨2äººçµ„ãŒnå€‹ï¼‰
 		if (h % 2 == 0 && w % 2 == 1) {
 			int temp = h;
 			h = w;
@@ -44,11 +44,11 @@ public class Main {
 		}
 		if (h % 2 == 1 && w % 2 == 0) {
 			if (g[1] > 0 || g[3] > 0) {
-				// Šï”‚Ì•¶š‚ª‚¢‚½‚çƒAƒEƒg
+				// å¥‡æ•°ã®æ–‡å­—ãŒã„ãŸã‚‰ã‚¢ã‚¦ãƒˆ
 				System.out.println("No");
 			} else if (g[2] <= w / 2) {
-				// g[2] := 2l‘g‚ğ”Po‚Å‚«‚é•¶š‚Ìí—Ş”
-				// w/2 := •K—v‚È2l‘g‚Ì”
+				// g[2] := 2äººçµ„ã‚’æ»å‡ºã§ãã‚‹æ–‡å­—ã®ç¨®é¡æ•°
+				// w/2 := å¿…è¦ãª2äººçµ„ã®æ•°
 				System.out.println("Yes");
 			} else {
 				System.out.println("No");
@@ -56,7 +56,7 @@ public class Main {
 			return;
 		}
 
-		// (2m+1)*(2n+1)ƒTƒCƒY‚Ìê‡i4l‘g‚ªnmŒÂ‚Æ2l‘g‚ª(n+m)ŒÂ‚Æ1lj
+		// (2m+1)*(2n+1)ã‚µã‚¤ã‚ºã®å ´åˆï¼ˆ4äººçµ„ãŒnmå€‹ã¨2äººçµ„ãŒ(n+m)å€‹ã¨1äººï¼‰
 		if (h % 2 == 1 && w % 2 == 1) {
 			if (g[1] == 1 && g[3] == 0) {
 				g[1]--;
@@ -65,15 +65,15 @@ public class Main {
 				g[3]--;
 				g[2]++;
 			} else {
-				// Šï”‚ª—]‚Á‚Ä‚½‚çƒAƒEƒg
+				// å¥‡æ•°ãŒä½™ã£ã¦ãŸã‚‰ã‚¢ã‚¦ãƒˆ
 				System.out.println("No");
 				return;
 			}
 
 			int z = ((h - 1) / 2) + ((w - 1) / 2);
 			if (g[2] <= z) {
-				// g[2] := 2l‘g‚ğ”Po‚Å‚«‚é•¶š‚Ìí—Ş”
-				// z := •K—v‚È2l‘g‚Ì”
+				// g[2] := 2äººçµ„ã‚’æ»å‡ºã§ãã‚‹æ–‡å­—ã®ç¨®é¡æ•°
+				// z := å¿…è¦ãª2äººçµ„ã®æ•°
 				System.out.println("Yes");
 			} else {
 				System.out.println("No");

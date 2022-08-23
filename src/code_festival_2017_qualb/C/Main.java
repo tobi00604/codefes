@@ -3,40 +3,40 @@ package code_festival_2017_qualb.C;
 import java.util.*;
 
 // C - 3 Steps
-// ‰ğàPDF‚ğ“Ç‚ñ‚Å‚©‚çÀ‘•
+// è§£èª¬PDFã‚’èª­ã‚“ã§ã‹ã‚‰å®Ÿè£…
 public class Main {
 
-	static List<List<Integer>> graph; // ƒOƒ‰ƒt
-	static int[] color; // “_‚ÌF
+	static List<List<Integer>> graph; // ã‚°ãƒ©ãƒ•
+	static int[] color; // ç‚¹ã®è‰²
 
 	public static void main(String[] args) {
 
-		// “ü—Í‚Æ‰Šú‰»
+		// å…¥åŠ›ã¨åˆæœŸåŒ–
 		Scanner sc = new Scanner(System.in);
-		int n = Integer.parseInt(sc.next()); // “_‚Ì”
-		int m = Integer.parseInt(sc.next()); // •Ó‚Ì”
+		int n = Integer.parseInt(sc.next()); // ç‚¹ã®æ•°
+		int m = Integer.parseInt(sc.next()); // è¾ºã®æ•°
 		graph = new ArrayList<List<Integer>>();
 		for (int v = 0; v < n; v++) {
 			graph.add(new ArrayList<Integer>());
 		}
 		for (int e = 0; e < m; e++) {
-			int from = Integer.parseInt(sc.next()) - 1; // n“_
-			int to = Integer.parseInt(sc.next()) - 1; // I“_
+			int from = Integer.parseInt(sc.next()) - 1; // å§‹ç‚¹
+			int to = Integer.parseInt(sc.next()) - 1; // çµ‚ç‚¹
 			graph.get(from).add(to);
-			graph.get(to).add(from); // –³ŒüƒOƒ‰ƒt‚Å‚ ‚ê‚Î‹tŒü‚«‚à‚ ‚é
+			graph.get(to).add(from); // ç„¡å‘ã‚°ãƒ©ãƒ•ã§ã‚ã‚Œã°é€†å‘ãã‚‚ã‚ã‚‹
 		}
 		color = new int[n];
 		Arrays.fill(color, 0);
 
-		// “ñ•”ƒOƒ‰ƒt‚©‚Ç‚¤‚©”»’è
+		// äºŒéƒ¨ã‚°ãƒ©ãƒ•ã‹ã©ã†ã‹åˆ¤å®š
 		boolean nibu = checkNibu(0);
 
-		// Šm”F—p
+		// ç¢ºèªç”¨
 //		System.out.println("NO " + Arrays.toString(color));
 
-		// pairs := “_‚Æ“_‚ÌƒyƒA‚Ì‚¤‚¿•Ó‚Å‚Â‚È‚ª‚é‚±‚Æ‚ª‚Å‚«‚é‚à‚Ì‚Ì”
-		// “ñ•”ƒOƒ‰ƒt‚Ìê‡A”’‚¢“_‚Æ•‚¢“_‚ÌƒyƒA‚¾‚¯
-		// “ñ•”ƒOƒ‰ƒt‚Å‚Í‚È‚¢ê‡A‚·‚×‚Ä‚ÌƒyƒA
+		// pairs := ç‚¹ã¨ç‚¹ã®ãƒšã‚¢ã®ã†ã¡è¾ºã§ã¤ãªãŒã‚‹ã“ã¨ãŒã§ãã‚‹ã‚‚ã®ã®æ•°
+		// äºŒéƒ¨ã‚°ãƒ©ãƒ•ã®å ´åˆã€ç™½ã„ç‚¹ã¨é»’ã„ç‚¹ã®ãƒšã‚¢ã ã‘
+		// äºŒéƒ¨ã‚°ãƒ©ãƒ•ã§ã¯ãªã„å ´åˆã€ã™ã¹ã¦ã®ãƒšã‚¢
 		long pairs = 0;
 		if (nibu) {
 			for (int v = 0; v < n; v++) {
@@ -47,36 +47,36 @@ public class Main {
 			pairs = (long) n * ((long) n - 1) / 2;
 		}
 
-		// pairs‰ÓŠ‚Ì‚¤‚¿m‰ÓŠ‚Í‚à‚¤•Ó‚ª‚ ‚é‚Ì‚Å‚»‚ê‚ğˆø‚«Z‚·‚ê‚Î“š‚¦‚ªo‚é
+		// pairsç®‡æ‰€ã®ã†ã¡mç®‡æ‰€ã¯ã‚‚ã†è¾ºãŒã‚ã‚‹ã®ã§ãã‚Œã‚’å¼•ãç®—ã™ã‚Œã°ç­”ãˆãŒå‡ºã‚‹
 		System.out.println(pairs - (long) m);
 
 	}
 
-	// “ñ•”ƒOƒ‰ƒt‚©‚Ç‚¤‚©‚ğBFS‚Ì—v—Ì‚Å”»’è
+	// äºŒéƒ¨ã‚°ãƒ©ãƒ•ã‹ã©ã†ã‹ã‚’BFSã®è¦é ˜ã§åˆ¤å®š
 	static boolean checkNibu(int s) {
 
 		boolean ret = true;
 
-		// ƒXƒ^[ƒg’n“_‚ğƒLƒ…[‚É“ü‚ê‚é
+		// ã‚¹ã‚¿ãƒ¼ãƒˆåœ°ç‚¹ã‚’ã‚­ãƒ¥ãƒ¼ã«å…¥ã‚Œã‚‹
 		Queue<Integer> queue = new ArrayDeque<Integer>();
 		queue.add(s);
 		color[s] = 1;
 
-		// ƒLƒ…[‚ª‹ó‚É‚È‚é‚Ü‚Åƒ‹[ƒv
+		// ã‚­ãƒ¥ãƒ¼ãŒç©ºã«ãªã‚‹ã¾ã§ãƒ«ãƒ¼ãƒ—
 		while (!queue.isEmpty()) {
 
-			// ƒLƒ…[‚©‚ç‚Ğ‚Æ‚Âæ‚èo‚·
+			// ã‚­ãƒ¥ãƒ¼ã‹ã‚‰ã²ã¨ã¤å–ã‚Šå‡ºã™
 			int v = queue.poll();
 
-			// Ÿ‚Ì“_‚»‚ê‚¼‚êˆ—
+			// æ¬¡ã®ç‚¹ãã‚Œãã‚Œå‡¦ç†
 			for (int next : graph.get(v)) {
 
 				if (color[next] == 0) {
-					// –³F‚È‚çF‚ğ“h‚Á‚ÄƒLƒ…[‚É“ü‚ê‚é
+					// ç„¡è‰²ãªã‚‰è‰²ã‚’å¡—ã£ã¦ã‚­ãƒ¥ãƒ¼ã«å…¥ã‚Œã‚‹
 					color[next] = -color[v];
 					queue.add(next);
 				} else {
-					// F‚ª‚ ‚é‚È‚ç“ñ•”ƒOƒ‰ƒt‚É”½‚µ‚Ä‚¢‚È‚¢‚©Šm”F
+					// è‰²ãŒã‚ã‚‹ãªã‚‰äºŒéƒ¨ã‚°ãƒ©ãƒ•ã«åã—ã¦ã„ãªã„ã‹ç¢ºèª
 					if (color[v] == color[next]) {
 						ret = false;
 					}

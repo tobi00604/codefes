@@ -9,8 +9,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		int a = Integer.parseInt(sc.next());
-		int b = Integer.parseInt(sc.next()); // Yes‚É‚È‚éŠCŠOŠw¶
-		int p = a + b; // ’èˆõ
+		int b = Integer.parseInt(sc.next()); // Yesã«ãªã‚‹æµ·å¤–å­¦ç”Ÿ
+		int p = a + b; // å®šå“¡
 		String s = sc.next();
 
 		for (int i = 0; i < s.length(); i++) {

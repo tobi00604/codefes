@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		long t = Long.parseLong(sc.next());
@@ -20,7 +20,7 @@ public class Main {
 		}
 		Arrays.sort(p);
 
-		// Œø‰Ê‚Ì‘å‚«‚¢‚à‚Ì‚©‚çg‚Á‚Ä‚¢‚­
+		// åŠ¹æœã®å¤§ãã„ã‚‚ã®ã‹ã‚‰ä½¿ã£ã¦ã„ã
 		for (int i = 0; i < n; i++) {
 			if (sum <= t) {
 				System.out.println(i);

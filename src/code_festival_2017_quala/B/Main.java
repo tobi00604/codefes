@@ -6,15 +6,15 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.next());
 		int m = Integer.parseInt(sc.next());
 		int k = Integer.parseInt(sc.next());
 
-		// Ens‚Ì‚¤‚¿‰½s”½“]‚µ‚½‚©
-		// Em—ñ‚Ì‚¤‚¿‰½—ñ”½“]‚µ‚½‚©
-		// ã‹L‚Ì‘g‚İ‡‚í‚¹‚Ì‘S’Tõ O(1000^2)
+		// ãƒ»nè¡Œã®ã†ã¡ä½•è¡Œåè»¢ã—ãŸã‹
+		// ãƒ»måˆ—ã®ã†ã¡ä½•åˆ—åè»¢ã—ãŸã‹
+		// ä¸Šè¨˜ã®çµ„ã¿åˆã‚ã›ã®å…¨æ¢ç´¢ O(1000^2)
 		for (int i = 0; i <= n; i++) {
 			for (int j = 0; j <= m; j++) {
 				int score = 0;

@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Main {
 
-	// KŒÂ‚ÌƒP[ƒL
+	// Kå€‹ã®ã‚±ãƒ¼ã‚­
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		int k = Integer.parseInt(sc.next());
 		int n = Integer.parseInt(sc.next());
@@ -17,26 +17,26 @@ public class Main {
 		}
 		Arrays.sort(a);
 
-		// ƒR[ƒi[ƒP[ƒX ƒP[ƒL‚ª‚Pí—Ş‚Ìê‡
+		// ã‚³ãƒ¼ãƒŠãƒ¼ã‚±ãƒ¼ã‚¹ ã‚±ãƒ¼ã‚­ãŒï¼‘ç¨®é¡ã®å ´åˆ
 		if (n == 1) {
 			System.out.println(k - 1);
 			return;
 		}
 
-		// ‚ ‚Æ‚Å—]‚éƒP[ƒL‚Ì”
+		// ã‚ã¨ã§ä½™ã‚‹ã‚±ãƒ¼ã‚­ã®æ•°
 		int amari = Math.max(0, a[n - 1] - a[n - 2] - 1);
 
-		// ‚ ‚Æ‚Å—]‚éƒP[ƒL‚ğŠ„‚è‚Ü‚¹‚ç‚ê‚éŒ„ŠÔ‚Ì”
+		// ã‚ã¨ã§ä½™ã‚‹ã‚±ãƒ¼ã‚­ã‚’å‰²ã‚Šè¾¼ã¾ã›ã‚‰ã‚Œã‚‹éš™é–“ã®æ•°
 		int sukima = 0;
 		for (int i = 0; i < n - 2; i++) {
 			sukima += a[i];
 		}
 
-		// Šm”F—p
+		// ç¢ºèªç”¨
 //		System.out.println(amari);
 //		System.out.println(sukima);
 
-		// ‚±‚½‚¦
+		// ã“ãŸãˆ
 		if (sukima < amari) {
 			System.out.println(amari - sukima);
 		} else {

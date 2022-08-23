@@ -6,14 +6,14 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		String s1 = sc.next();
 		String s2 = sc.next();
 		String s3 = sc.next();
 		int n = s1.length() / 2;
 
-		// Še•¶š‚Ì“oê‰ñ”
+		// å„æ–‡å­—ã®ç™»å ´å›æ•°
 		Map<Integer, Integer> m1 = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> m2 = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> m3 = new HashMap<Integer, Integer>();
@@ -28,25 +28,25 @@ public class Main {
 			m3.replace(s3.charAt(i) + 0, m3.get(s3.charAt(i) + 0) + 1);
 		}
 
-		// ”»’èŞ—¿
+		// åˆ¤å®šææ–™
 		int totalP = 0;
 		int totalQ = 0;
 		for (int i = 'A'; i <= 'Z'; i++) {
 
-			// ‚P‚Â‚ß‚Ì‹à‘®‚©‚çpŒÂ‚Íæ‚ç‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
+			// ï¼‘ã¤ã‚ã®é‡‘å±ã‹ã‚‰på€‹ã¯å–ã‚‰ãªã‘ã‚Œã°ãªã‚‰ãªã„
 			int p = Math.max(0, m3.get(i) - m2.get(i));
 			totalP += p;
 
-			// ‚P‚Â‚ß‚Ì‹à‘®‚©‚çqŒÂ‚Ü‚Åæ‚Á‚Ä‚¢‚¢
+			// ï¼‘ã¤ã‚ã®é‡‘å±ã‹ã‚‰qå€‹ã¾ã§å–ã£ã¦ã„ã„
 			int q = Math.min(Math.min(m1.get(i), m3.get(i)), n);
 			totalQ += q;
 
-			// Šm”F—p
-//			System.out.println("‚P‚Â‚ß‚Ì‹à‘®‚©‚çæ‚é" + (char) i + "‚Í" + p + "`" + q + "ŒÂ");
+			// ç¢ºèªç”¨
+//			System.out.println("ï¼‘ã¤ã‚ã®é‡‘å±ã‹ã‚‰å–ã‚‹" + (char) i + "ã¯" + p + "ï½" + q + "å€‹");
 
 		}
 
-		// ‚±‚½‚¦
+		// ã“ãŸãˆ
 		System.out.println((totalP <= n && n <= totalQ) ? "YES" : "NO");
 
 	}

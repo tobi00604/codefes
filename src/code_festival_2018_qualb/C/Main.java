@@ -9,18 +9,18 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		n = Integer.parseInt(sc.next());
 		a = new String[n][n];
 
-		// ƒR[ƒi[ƒP[ƒXAn=1‚¾‚Á‚½‚ç“š‚¦‚Í"X"
+		// ã‚³ãƒ¼ãƒŠãƒ¼ã‚±ãƒ¼ã‚¹ã€n=1ã ã£ãŸã‚‰ç­”ãˆã¯"X"
 		if (n == 1) {
 			System.out.println("X");
 			return;
 		}
 
-		// s‚²‚Æ‚ÌƒXƒvƒŒ[ŠJnˆÊ’u
+		// è¡Œã”ã¨ã®ã‚¹ãƒ—ãƒ¬ãƒ¼é–‹å§‹ä½ç½®
 		int[] begin = new int[5];
 		begin[0] = 0;
 		begin[1] = 2;
@@ -28,14 +28,14 @@ public class Main {
 		begin[3] = 1;
 		begin[4] = 3;
 
-		// ¶¬
+		// ç”Ÿæˆ
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				a[i][j] = (j % 5 == begin[i % 5]) ? "X" : ".";
 			}
 		}
 
-		// ‚S•Ó‚Í’Ç‰ÁƒXƒvƒŒ[‚ª•K—v
+		// ï¼”è¾ºã¯è¿½åŠ ã‚¹ãƒ—ãƒ¬ãƒ¼ãŒå¿…è¦
 		for (int i = 0; i < n; i++) {
 			a[0][i] = safe(0, i) ? "Y" : a[0][i];
 			a[n - 1][i] = safe(n - 1, i) ? "Y" : a[n - 1][i];
@@ -43,12 +43,12 @@ public class Main {
 			a[i][n - 1] = safe(i, n - 1) ? "Y" : a[i][n - 1];
 		}
 
-		// ƒXƒvƒŒ[‰ÓŠŠm”F—p
+		// ã‚¹ãƒ—ãƒ¬ãƒ¼ç®‡æ‰€ç¢ºèªç”¨
 //		for (int i = 0; i < n; i++) {
 //			System.out.println(Arrays.toString(a[i]).replace(", ", "").replace("[", "").replace("]", ""));
 //		}
 
-		// ƒXƒvƒŒ[‰ñ”Šm”F—p
+		// ã‚¹ãƒ—ãƒ¬ãƒ¼å›æ•°ç¢ºèªç”¨
 //		int count = 0;
 //		for (int i = 0; i < n; i++) {
 //			for (int j = 0; j < n; j++) {
@@ -57,7 +57,7 @@ public class Main {
 //		}
 //		System.out.println(count);
 
-		// ‚±‚½‚¦
+		// ã“ãŸãˆ
 		for (int i = 0; i < n; i++) {
 			System.out.println(
 					Arrays.toString(a[i]).replace("Y", "X").replace(", ", "").replace("[", "").replace("]", ""));
@@ -65,7 +65,7 @@ public class Main {
 
 	}
 
-	// ƒ}ƒX(i, j)‚ª‚Ü‚¾H‚×‚ç‚ê‚éó‘Ô‚©‚Ç‚¤‚©”»’è
+	// ãƒã‚¹(i, j)ãŒã¾ã é£Ÿã¹ã‚‰ã‚Œã‚‹çŠ¶æ…‹ã‹ã©ã†ã‹åˆ¤å®š
 	static boolean safe(int i, int j) {
 
 		if (a[i][j].equals("X")) {

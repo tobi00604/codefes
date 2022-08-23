@@ -6,16 +6,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// “ü—Í
+		// å…¥åŠ›
 		Scanner sc = new Scanner(System.in);
 		String s = sc.next();
 		String answer = "";
 		int k = Integer.parseInt(sc.next());
 
-		// Še•¶š‚É‚Â‚¢‚Ä
+		// å„æ–‡å­—ã«ã¤ã„ã¦
 		for (int i = 0; i < s.length(); i++) {
 
-			// i•¶š–Ú‚ğ'a'‚É‚Å‚«‚é‚È‚ç‚·‚é
+			// iæ–‡å­—ç›®ã‚’'a'ã«ã§ãã‚‹ãªã‚‰ã™ã‚‹
 			if (s.charAt(i) != 'a' && 'z' - s.charAt(i) + 1 <= k) {
 				answer += "a";
 				k -= 'z' - s.charAt(i) + 1;
@@ -25,11 +25,11 @@ public class Main {
 
 		}
 
-		// Šm”F—p
+		// ç¢ºèªç”¨
 //		System.out.println(k);
 //		System.out.println(answer);
 
-		// —]‚Á‚½k‚ğg‚Á‚ÄÅŒã‚Ì•¶š‚ğzŠÂ‚³‚¹‚é
+		// ä½™ã£ãŸkã‚’ä½¿ã£ã¦æœ€å¾Œã®æ–‡å­—ã‚’å¾ªç’°ã•ã›ã‚‹
 		k %= 26;
 		char x = answer.charAt(answer.length() - 1);
 		for (int i = 0; i < k; i++) {

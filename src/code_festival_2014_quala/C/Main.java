@@ -10,7 +10,7 @@ public class Main {
 		long a = Long.parseLong(sc.next());
 		long b = Long.parseLong(sc.next());
 
-		// Šm”F
+		// ç¢ºèª
 //		System.out.println(f(a, b, 4));
 //		System.out.println(f(a, b, 100));
 //		System.out.println(f(a, b, 400));
